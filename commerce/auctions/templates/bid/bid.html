@@ -1,0 +1,84 @@
+<!--from humanize import intcomma-->
+{% load humanize %}
+
+<h2>Listing: {{ listing.title }}</h2>
+{% if watching %}
+    <form action="{% url 'watchlist' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="watchlist_id" value="{{ id }}" id="watchlist_id">
+        <input class="watch" type="submit" value="Remove from Watchlist">
+    </form>
+{% elif user.is_authenticated %}
+    <form action="{% url 'watch_add' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="watchlist_id" value="{{ id }}" id="watchlist_id">
+        <input class="watch" type="submit" value="Add to Watchlist">
+    </form>
+{% endif %}
+<div class="listing_bid">
+    <img src="{{ listing.img_url }}">
+    <p> {{ listing.description }}</p>
+    {% if not watching %}
+        <form action="{% url 'watch_add' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="listing_id" value="{{ listing.id }}" id="id_listing_id">
+            <input class="btn btn-primary" type="submit" value="Add to Watchlist">
+        </form>
+    {% endif %}
+    {% if max_bid and max_bid != listing.start_bid %}
+        <p class="price"><b>${{ max_bid|floatformat:2 }}</b></p>
+    {% else %}
+        <p><b class="price">${{ listing.start_bid|floatformat:2|intcomma }}</b></p>
+    {% endif %}
+    {% if user.username == listing.seller.username %}
+        {% if num_of_bid %}
+            <p>{{ num_of_bid }} bid(s) made!</p>
+        {% else %}
+            <p>No bid made!</p>
+        {% endif %}
+        <form action="{% url 'sell_empty' %}{{ listing.id }}" method="post">
+        {% csrf_token %}
+        <div>
+            <input type="hidden" name="listing_id" value="{{ listing.id }}" id="id_listing_id">
+        </div>
+    {% elif num_of_bid %}
+        <p>{{ num_of_bid }} bid(s) so far. You bid is the current bid</p>
+    {% else %}
+        <p>You bid is the first bid</p>
+    {% endif %}
+    <form action="{% url 'bid' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_new_bid">New bid:</label>
+            <input type="hidden" name="listing_id" value="{{ listing.id }}" id="id_listing_id">
+            {% if max_bid %}
+                <input type="number" name="new_bid" value="{{ min_value }}" min="{{ min_value }}" step="any" required id="id_new_bid">
+            {% else %}
+                <input type="number" name="new_bid" value="{{ listing.start_bid }}" min="{{ listing.start_bid }}" step="any" required id="id_new_bid">
+            {% endif %}
+        </div>
+        <div class="bid_button">
+            {% if user.username != listing.seller.username %}
+                <input class="btn btn-primary" type="submit" value="Place Bid">
+            {% elif num_of_bid %}
+                <input class="btn btn-primary" type="submit" value="Sell">
+            {% endif %}
+        </div>
+    </form>
+<div>
+
+<hr>
+<h2>Details</h2>
+<ul>
+    {% if user.username == listing.seller.username %}
+        <li>Listed by: You</li>
+    {% else %}
+        <li>Listed by: {{ listing.seller.username }}</li>
+    {% endif %}
+    {% if listing.category %}
+        <li>Category: {{ listing.category }}</li>
+    {% else %}
+        <li>Category: No Category Listed</li>
+    {% endif %}
+    <p>Created: {{ listing.create_date }}</p>
+</ul>

@@ -1,0 +1,110 @@
+<div class="div_profile">
+{% if message %}
+    <div class="alert alert-danger" role="alert" id="message"><p>{{ message|safe }}</p></div>
+{% endif %}
+
+{% if user_profile %}
+    <div id="user-name">
+        <p><b>User name:</b> {{ user_profile.username }}</p>
+        <p><b>First name:</b> {{ user_profile.first_name }}</p>
+        <p><b>Last name:</b> {{ user_profile.last_name }}</p>
+    </div>
+    <div id="user-email">
+        <p><b>User email:</b> {{ user_profile.email }}</p>
+    </div>
+    <div id="user-phone" class="info">
+        {% if user_profile.phones %}
+            {% for phone in user_profile.phones %}
+            <div class="col-md-15" id="phone_id_{{ phone.id }}">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-minus-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5"></path>
+                    </svg>
+                </span>
+                <input id="phone_input_{{ phone.id }}" disabled type="text" class="form-control" value="{{ phone.phone_number }}" aria-describedby="basic-addon1">
+
+                <button type="button" class="btn btn-sm btn-primary" onclick="EditPhone(this, '/profile/phone/update/', {{ phone.id }}, '#phone_input_{{ phone.id }}')">Edit</button>
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="RemoveInfo('/profile/phone/remove/', {{ phone.id }}, '#phone_id_')">Remove</button>
+            </div>
+            </div>
+
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-danger" role="alert"><p>No phone registered!</p></div>
+        {% endif %}
+        <button class="btn btn-sm btn-outline-info" type="submit" id="add-phone">Add phone</button>
+        <div  id="register-phone" class="hide">
+            <form action="{% url 'add-phone' %}" method="post" class="form-register" id="new-phone">
+                {% csrf_token %}
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Register new phone number</button>
+            </form>
+        </div>
+    </div>
+    <div id="user-address">
+        {% if user_profile.addresses %}
+            {% for address in user_profile.addresses %}
+                <div id="user-address{{ address.id }}">
+                    <p><b>Address:</b> {{ address.address }}</p>
+                    <p><b>Complement:</b> {{ address.complement }}</p>
+                    <p><b>City:</b> {{ address.city }}</p>
+                    {% if address.gps %}
+                        <p><b>GPS position:</b> ({{ address.gps.latitude }}, {{ address.gps.longitude }})</p>
+                    {% endif %}
+                    <button type="button" class="btn btn-sm btn-primary" onclick="EditAddress(this, {{ address }}, '/profile/address/update/', '#user-address{{ address.id }}')">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="RemoveInfo('/profile/address/remove/', {{ address.id }}, '#user-address')">Remove</button>
+                <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-danger" role="alert"><p>No address registered!</p></div>
+        {% endif %}
+        <button class="btn btn-sm btn-outline-info" type="submit" id="add-address">Add address</button>
+        <div>
+            <form action="{% url 'add-address' %}" method="post" class="form-register hide" id="new-address">
+                {% csrf_token %}
+                {% if form %}
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="register-address">Register new address</button>
+                    {% for field in form %}
+                        {% if field.name == 'gps_latitude' %}
+                            <div class="div_gps">
+                                {% if form.errors.gps_latitude %}
+                                    {{ form.errors.gps_latitude }}
+                                {% endif %}
+                                {{ form.gps_latitude }}
+                        {% else %}
+                            {% if field.name == 'gps_longitude' %}
+                                    {% if form.errors.gps_longitude %}
+                                        {{ form.errors.gps_longitude }}
+                                    {% endif %}
+                                    {{ form.gps_longitude }}
+                                    <button type="button" class="btn btn-sm btn-outline-info" id="get_gps_pos">GPS</button>
+                                </div>
+                            {% else %}
+                                <div>
+                                    {% if field.name == 'is_courier' %}
+                                        {% if field.errors %}
+                                            {{ field.errors }}
+                                        {% endif %}
+                                        {{ field }} Is courier
+                                    {% else %}
+                                        {% if field.errors %}
+                                            {{ field.errors }}
+                                        {% endif %}
+                                        {{ field }}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="register-address">Register new address</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% else %}
+    <h1>No profile for user {{ user.username }} provided</h1>
+{% endif %}
+
+</div>

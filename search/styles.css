@@ -1,0 +1,176 @@
+body {
+    background-color: black;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    padding: 20px;
+}
+
+#menu > a {
+    margin: 5px;
+    vertical-align: middle;
+
+    height: 30px;
+}
+
+#image_google {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#image_google > img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 150px;
+    max-height: 290px;
+    object-fit:contain;
+    width:272px;
+    position:relative;
+    object-fit:contain;
+    object-position:center bottom;
+    background-color: black;
+}
+
+#image_google > p {
+    color:#4487f6;
+    font:16px/16px Arial,sans-serif;
+    position:relative;
+    left:125px;
+    bottom:15px;
+    white-space:nowrap;
+
+}
+
+#search {
+    display: grid;  
+    grid-column: 1; 
+    justify-content: center;
+}
+
+.buttons_div {
+    display: flex; 
+    padding: 20px; 
+    column-gap: 20px; 
+    justify-content: center;
+}
+
+button {
+    border-color: black;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 16px;
+    color: black;
+    width: 150px;
+    height: 30px;
+}
+
+button:hover {
+    border-color: white;
+}
+
+a {
+    style=width: 120px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.textarea_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 600px;
+    min-height: 44px;
+    color: white;
+    border: 3px solid;
+    border-color: white;
+    border-radius: 24px;
+    min-height: 44px;
+    border: 1px solid #5f6368;
+    background-color: black;
+    vertical-align: middle;
+}
+
+textarea {
+    flex: 90%;
+    font-size: 16px;
+    margin: 3px;
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    padding-top: 11px;
+}
+
+textarea:focus {
+    background-color: transparent;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+textarea:hover {
+    border-color: transparent;
+    border: none;
+}
+
+.textarea_div:hover {
+    background: #303134;
+    box-shadow: 0 1px 6px 0 #171717;
+    border-color: transparent;
+}
+        
+#advanced {
+    display: block;
+    justify-content: baseline;
+    grid-column: 1;
+    align-items:start;
+    color: white;
+    font-size: 14px;
+    color: gray;
+}
+
+#advanced > div {
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    grid-template-columns: 16% 40% 40%;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: stretch;
+}
+
+.button_adv {
+    background-color: blue;
+    border-color: blue;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 150px;
+    height: 30px;
+}
+
+.button_adv:hover {
+    background-color: #357ae8;
+    border: 1px solid #2f5bb7;
+}
+
+@media (max-width: 1180px) {
+    .label_rigth {
+        display: none;
+    }
+}
+
+b {
+    color: darkgray;
+}

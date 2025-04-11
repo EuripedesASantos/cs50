@@ -1,0 +1,31 @@
+{% extends "courier/layout.html" %}
+{% load static %}
+
+{% block nav %}
+    {% include 'courier/nav.html' %}
+{% endblock %}
+
+{% block script %}
+    {% if title == 'User Profile' %}
+        <script src="{% static 'courier/gps.js' %}"></script>
+        <script src="{% static 'courier/profile.js' %}"></script>
+    {% elif title == 'New Shipment' %}
+        <script type="module" src="{% static 'courier/new_ship.js' %}"></script>
+    {% else %}
+        <script type="module" src="{% static 'courier/shipments.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
+
+{% block body %}
+    {% if title == 'New Shipment' %}
+        {% include 'courier/new_ship.html' %}
+    {% elif title == 'User Profile' %}
+        {% include 'courier/profile.html' %}
+    {% elif title == 'New Profile' %}
+        {% include 'courier/register.html' %}
+    {% else %}
+        {% include 'courier/shipments.html' %}
+    {% endif %}
+
+{% endblock %}

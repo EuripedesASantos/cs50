@@ -1,0 +1,51 @@
+{% load static %}
+
+{% if message %}
+    <hr>
+    <div class="alert alert-danger" role="alert" id="message"><p>{{ message|safe }}</p></div>
+{% endif %}
+
+<form action="{% url 'register' %}" method="post" class="form-register">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+    {% for field in form %}
+        {% if field.name == 'gps_latitude' %}
+            <div class="div_gps">
+                {% if form.errors.gps_latitude %}
+                    {{ form.errors.gps_latitude }}
+                {% endif %}
+                {{ form.gps_latitude }}
+        {% else %}
+            {% if field.name == 'gps_longitude' %}
+                    {% if form.errors.gps_longitude %}
+                        {{ form.errors.gps_longitude }}
+                    {% endif %}
+                    {{ form.gps_longitude }}
+                    <button type="button" class="btn btn-sm btn-outline-info" id="get_gps_pos">GPS</button>
+                </div>
+            {% else %}
+                <div>
+                    {% if field.name == 'is_courier' %}
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {{ field }} Is courier
+                    {% else %}
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {{ field }}
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <button class="btn btn-lg btn-primary btn-block" type="submit" id="message">Register</button>
+    {% if message %}
+        <hr>
+        <div class="alert alert-danger" role="alert"><p>{{ message|safe }}</p></div>
+    {% endif %}
+    {% if not user.is_authenticated %}
+        <p>Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+    {% endif %}
+</form>

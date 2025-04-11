@@ -1,0 +1,42 @@
+{% load humanize %}
+
+<div class="listing">
+    <div class="div_img">
+        <img src="{{ sale_item.listing.img_url }}">
+    </div>
+    <div>
+        <h3>{{ sale_item.listing.title }}</h3>
+        <p><b>Price: ${{ sale_item.listing.start_bid|floatformat:2|intcomma }}</b></p>
+        {% if sale_item.listing.description %}
+            <p><b>{{ sale_item.listing.description }}</b></p>
+        {% endif %}
+        <p>Created: {{ sale_item.listing.create_date }}</p>
+        <p>Buyer: {{ sale_item.buyer.user.username }}</p>
+        <p><b>Bid: ${{ sale_item.buyer.value|floatformat:2|intcomma }}</b></p>
+    </div>
+    <div class="div_detail">
+        <h2 class="class_hide">Details</h2>
+        <ul class="class_hide">
+            {% if sale_item.listing.category %}
+                <li class="class_hide">Category: {{ sale_item.listing.category }}</li>
+            {% else %}
+                <li class="class_hide">Category: No Category Listed</li>
+            {% endif %}
+            <li class="class_hide">Created: {{ sale_item.listing.create_date }}</li>
+        </ul>
+        <h2 class="class_hide">Comment</h2>
+        {% if comments %}
+            <ul class="class_hide">
+                {% for comment in comments %}
+                    {% if comment.listing == sale_item.listing %}
+                        <li class="class_hide">{{ comment.comment }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+         <ul>
+             <li class="class_hide">No comment</li>
+         </ul>
+        {% endif %}
+   </div>
+</div>

@@ -1,0 +1,102 @@
+.body-base {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.body-layout {
+  flex-direction: column;
+}
+
+.body-log {
+    height: 100vh;
+}
+
+.form-login {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.form-register {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin: 20px;
+}
+
+.form-courier {
+    display: flex;
+    justify-content: center;
+}
+div {
+    padding: 5px;
+}
+
+.div_gps {
+    display: inline-flex;
+}
+
+.div_shipments {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+#phone_div  {
+    display: grid;
+}
+
+ul {
+    text-align: justify;
+}
+
+p {
+    text-align: justify;
+}
+
+.div_profile {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.ul_shipments {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  align-items: left;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

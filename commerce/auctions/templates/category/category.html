@@ -1,0 +1,27 @@
+{% load humanize %}
+
+<h2>{{ page_name }}</h2>
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+
+{% if category %}
+    <h3>Category: {{ category }}</h3>
+    <div>
+        {% for listing in active_listings %}
+            {% include "listing/listing.html" %}
+        {% endfor %}
+    </div>
+{% else %}
+    {% if category_list %}
+    <div>
+        <div class="listing">
+            <ul>
+            {% for item in category_list %}
+                <li><a href="{% url 'categories' %}{{ item.category|safe }}">{{ item.category }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+{% endif %}

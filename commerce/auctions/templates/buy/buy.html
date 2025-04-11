@@ -1,0 +1,12 @@
+<h2>{{ page_name }}</h2>
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+
+{% if buys_list %}
+    <div>
+        {% for sale_item in buys_list %}
+            {% include 'buy/buy_item.html' %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'courier/styles.css' %}" rel="stylesheet">
+    </head>
+    <body class="body-base body-log">
+        <form action="{% url 'login' %}" method="post" class="form-login">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            {{form.as_p}}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            {% if message %}
+                <hr>
+                <div class="alert alert-danger" role="alert" id="message"><p>{{ message }}</p></div>
+            {% endif %}
+            <p>Don't have an account? <a href="{% url 'register' %}">Register here.</a></p>
+        </form>
+    </body>
+</html>

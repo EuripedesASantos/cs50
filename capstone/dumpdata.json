@@ -1,0 +1,1292 @@
+[
+{
+  "model": "courier.gpsposition",
+  "pk": 1,
+  "fields": {
+    "latitude": 78.62114,
+    "longitude": 100.389,
+    "date_time": "2025-01-16T23:54:50.146Z"
+  }
+},
+{
+  "model": "courier.gpsposition",
+  "pk": 2,
+  "fields": {
+    "latitude": -3.1649335,
+    "longitude": 20.338637,
+    "date_time": "2025-01-16T23:54:50.154Z"
+  }
+},
+{
+  "model": "courier.gpsposition",
+  "pk": 3,
+  "fields": {
+    "latitude": -30.972127,
+    "longitude": 177.443189,
+    "date_time": "2025-01-16T23:54:50.165Z"
+  }
+},
+{
+  "model": "courier.gpsposition",
+  "pk": 4,
+  "fields": {
+    "latitude": 68.783108,
+    "longitude": -35.703716,
+    "date_time": "2025-01-16T23:54:50.188Z"
+  }
+},
+{
+  "model": "courier.gpsposition",
+  "pk": 5,
+  "fields": {
+    "latitude": 38.5315865,
+    "longitude": 54.979322,
+    "date_time": "2025-01-16T23:54:50.192Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 1,
+  "fields": {
+    "shipment": 9,
+    "datetime_create": "2025-01-17T00:00:00.100Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 3,
+  "fields": {
+    "shipment": 4,
+    "datetime_create": "2025-01-17T00:00:00.109Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 4,
+  "fields": {
+    "shipment": 16,
+    "datetime_create": "2025-01-17T00:00:00.113Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 5,
+  "fields": {
+    "shipment": 13,
+    "datetime_create": "2025-01-17T00:00:00.117Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 6,
+  "fields": {
+    "shipment": 3,
+    "datetime_create": "2025-01-17T00:00:00.121Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 7,
+  "fields": {
+    "shipment": 8,
+    "datetime_create": "2025-01-17T00:00:00.125Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 8,
+  "fields": {
+    "shipment": 19,
+    "datetime_create": "2025-01-17T00:00:00.129Z"
+  }
+},
+{
+  "model": "courier.order",
+  "pk": 10,
+  "fields": {
+    "shipment": 12,
+    "datetime_create": "2025-01-17T00:00:00.136Z"
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 1,
+  "fields": {
+    "shipment": 3,
+    "datetime_create": "2025-01-17T00:01:29.861Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 2,
+  "fields": {
+    "shipment": 12,
+    "datetime_create": "2025-01-17T00:01:29.865Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 4,
+  "fields": {
+    "shipment": 19,
+    "datetime_create": "2025-01-17T00:01:29.874Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 5,
+  "fields": {
+    "shipment": 13,
+    "datetime_create": "2025-01-17T00:01:29.878Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 6,
+  "fields": {
+    "shipment": 4,
+    "datetime_create": "2025-01-17T14:45:24.873Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 8,
+  "fields": {
+    "shipment": 3,
+    "datetime_create": "2025-01-17T14:47:21.939Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 9,
+  "fields": {
+    "shipment": 12,
+    "datetime_create": "2025-01-17T14:47:21.943Z",
+    "gps": null
+  }
+},
+{
+  "model": "courier.deliver",
+  "pk": 10,
+  "fields": {
+    "shipment": 4,
+    "datetime_create": "2025-01-17T14:47:21.947Z",
+    "gps": null
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$Ia5DxjsAkzK583cCQ6pPiw$kvct+EjW7JQV3fDEmeBrFvVv7U5xnwzF5KWm5Y7MDIk=",
+    "last_login": "2025-01-24T00:43:08.239Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "Michael",
+    "last_name": "Fisher",
+    "email": "user1@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:23.639Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$UXG7QHcrmx0DgcEr4hNzri$h1Am5Jwx45ahRcq/UNdJg9dR6BK7lKNknArJyke4w78=",
+    "last_login": "2025-01-21T04:33:38.029Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "Mark",
+    "last_name": "Elliott",
+    "email": "user2@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:23.963Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$ec69MzA0uoVbRXC9Q3OGNG$0KyCy7VOc3ygdsciW8K/tqVPI5EWak9kAT1FpfelfsY=",
+    "last_login": "2025-01-21T05:19:37.347Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "Monique",
+    "last_name": "Wheeler",
+    "email": "user3@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:24.280Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$4ST0flnODfK0mfEAvbTFzV$U8ZCK5l3aX4f4LstYIPeZ5kOTI9XXG/EIRrpU/M2sWw=",
+    "last_login": "2025-01-21T05:20:25.879Z",
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "Kelli",
+    "last_name": "Jackson",
+    "email": "user4@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:24.597Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$XGgG3yVtpJw0Q4KKKoKeeq$//fDCRTwbbv9/fhaGvU7MLHfxLaGISzAMPqEvjfIJGY=",
+    "last_login": "2025-01-21T05:20:09.106Z",
+    "is_superuser": false,
+    "username": "user5",
+    "first_name": "Michelle",
+    "last_name": "Brown",
+    "email": "user5@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:24.929Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$ZcSaJHJwEqQ4GADJK4Atbe$1Kopt4C820/TF4tXdiEqrQNQnWkL6Z2iOWYeB9t43d0=",
+    "last_login": "2025-01-21T05:35:08.513Z",
+    "is_superuser": false,
+    "username": "user6",
+    "first_name": "Marissa",
+    "last_name": "Mccall",
+    "email": "user6@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:25.311Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$FvMbwbXAaQNy8vvwFUrHef$NEg6DaV+JdvT8eWMot5bnRv5toqUZzSGiG5IumOSKsA=",
+    "last_login": "2025-01-21T05:20:37.190Z",
+    "is_superuser": false,
+    "username": "user7",
+    "first_name": "Angela",
+    "last_name": "Nunez",
+    "email": "user7@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:25.643Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$FJO5klcoelGAvvQoAJU6m6$2uBXSL4xiocdX9JJ8w0iI7UMaubRigIqnm4/TzkTpBU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user8",
+    "first_name": "Lisa",
+    "last_name": "Stout",
+    "email": "user8@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:25.976Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$mlNJgo5FV9WCOWiAkZEerf$q+XKzk3XLh5YWoe2ZgHGeEuSulJZdP562K9NCl0ZR6U=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user9",
+    "first_name": "Courtney",
+    "last_name": "Williams",
+    "email": "user9@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-16T23:51:26.294Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$YLFX1rUCPCKFmiaEiOVp85$bVsS/j8Hyb2/3OEFdM3YliWyXdqT2bqko4AiOJwViFA=",
+    "last_login": "2025-01-21T02:27:55.835Z",
+    "is_superuser": false,
+    "username": "user10",
+    "first_name": "John",
+    "last_name": "Dow",
+    "email": "user10@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-01-21T02:17:57.787Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ss5ud47swo49j4i81ib9e18pg1k7vh9z",
+  "fields": {
+    "session_data": ".eJxVjEsOAiEQBe_C2pBGkAaX7j0D6eYjowaSYWZlvLtOMgvdvqp6LxFoXWpYR57DlMRZKHH43ZjiI7cNpDu1W5ext2WeWG6K3OmQ157y87K7fweVRv3WoBXEpDVxVFk71Gx9sYmRXD4hAxrDRJAQjAO2hQoYLNpjts6jO4r3B-PJN6U:1tb7mu:NJnFyHoiQ4ak7cY601KJzp02Kiiu57S3sNfwRaQPYTM",
+    "expire_date": "2025-02-07T00:43:08.242Z"
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user1"
+    ],
+    "is_courier": true
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user2"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user3"
+    ],
+    "is_courier": true
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user4"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user5"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user6"
+    ],
+    "is_courier": true
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user7"
+    ],
+    "is_courier": true
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user8"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user9"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.user",
+  "fields": {
+    "user_ptr": [
+      "user10"
+    ],
+    "is_courier": false
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "user1"
+    ],
+    "phone_number": "480.734.8160x115"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "user2"
+    ],
+    "phone_number": "001-240-529-0471"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "user2"
+    ],
+    "phone_number": "+1-862-833-4592x61969"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "phone_number": "(753)410-0207"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "user4"
+    ],
+    "phone_number": "5738177553"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "user4"
+    ],
+    "phone_number": "716.429.3885x14675"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "user5"
+    ],
+    "phone_number": "2849937126"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "user5"
+    ],
+    "phone_number": "474-754-5508x602"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "user6"
+    ],
+    "phone_number": "328-296-7720"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "user7"
+    ],
+    "phone_number": "325-977-8651"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "user8"
+    ],
+    "phone_number": "746-896-5024x211"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "user8"
+    ],
+    "phone_number": "(203)949-6488"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "user9"
+    ],
+    "phone_number": "792-279-8507x76281"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "user9"
+    ],
+    "phone_number": "(606)798-9915x66007"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "user9"
+    ],
+    "phone_number": "267-390-2975x912"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "phone_number": "012 3456-7890"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 17,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "phone_number": "dfdsfds"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "user10"
+    ],
+    "phone_number": "098 7654-3210"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 19,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "phone_number": "132132"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 20,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "phone_number": "132132 65456"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "user1"
+    ],
+    "phone_number": "231321 321321 3213"
+  }
+},
+{
+  "model": "courier.phonenumber",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "user1"
+    ],
+    "phone_number": "231321 321321 3213 2"
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "user1"
+    ],
+    "address": "51966 Wolf Drive Apt. 506",
+    "complement": "West James, VT 29442",
+    "city": "Cesarport",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "user2"
+    ],
+    "address": "7600 Camacho Corners",
+    "complement": "Holtmouth, SC 07843",
+    "city": "Beckyport",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "user3"
+    ],
+    "address": "17481 Irwin Garden",
+    "complement": "Sarahview, IL 24612",
+    "city": "Lauraville",
+    "gps": 2
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "user4"
+    ],
+    "address": "1172 Richards Passage Apt. 530",
+    "complement": "Lake Christine, DC 82217",
+    "city": "East Jacob",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "user4"
+    ],
+    "address": "1053 Tucker Radial",
+    "complement": "Lake Joseph, NH 18904",
+    "city": "East Jeremytown",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "user5"
+    ],
+    "address": "3081 Anderson Mews Suite 994",
+    "complement": "Tanyaside, MT 89067",
+    "city": "Richardburgh",
+    "gps": 3
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "user6"
+    ],
+    "address": "USNS Gibbs",
+    "complement": "FPO AE 92125",
+    "city": "Carterside",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "user7"
+    ],
+    "address": "71829 Rebecca Hills",
+    "complement": "Port Hannah, TX 88919",
+    "city": "Robinsonport",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "user7"
+    ],
+    "address": "8510 Brewer Rapids Suite 232",
+    "complement": "East Jessica, WA 64532",
+    "city": "Fisherberg",
+    "gps": 4
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "user7"
+    ],
+    "address": "815 Morris Extensions",
+    "complement": "Lake Mariaton, OH 46509",
+    "city": "Joshuaville",
+    "gps": 5
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "user8"
+    ],
+    "address": "7151 Murray Lane Suite 619",
+    "complement": "New Heidi, NM 19869",
+    "city": "East Brendan",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "user9"
+    ],
+    "address": "288 Ryan Brooks Suite 637",
+    "complement": "Knightfurt, ID 52281",
+    "city": "Maloneshire",
+    "gps": null
+  }
+},
+{
+  "model": "courier.address",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "user10"
+    ],
+    "address": "1370 Hill valey",
+    "complement": "Minst",
+    "city": "San Antonio",
+    "gps": null
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 1,
+  "fields": {
+    "contents": "Used Salad",
+    "check_code_get": "3982",
+    "check_code_put": "3982",
+    "user_courier": null,
+    "user_sender": [
+      "user1"
+    ],
+    "address_sender": 1,
+    "user_receiver": [
+      "user2"
+    ],
+    "address_receiver": 2,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.670Z",
+    "status": 0
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 2,
+  "fields": {
+    "contents": "New Granite Cheese",
+    "check_code_get": "1983",
+    "check_code_put": "9067",
+    "user_courier": [
+      "user3"
+    ],
+    "user_sender": [
+      "user6"
+    ],
+    "address_sender": 8,
+    "user_receiver": [
+      "user2"
+    ],
+    "address_receiver": 2,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.680Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 3,
+  "fields": {
+    "contents": "Ergonomic Steel Pizza",
+    "check_code_get": "7877",
+    "check_code_put": "6034",
+    "user_courier": [
+      "user2"
+    ],
+    "user_sender": [
+      "user1"
+    ],
+    "address_sender": 2,
+    "user_receiver": [
+      "user8"
+    ],
+    "address_receiver": 12,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.685Z",
+    "status": 3
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 4,
+  "fields": {
+    "contents": "Rustic Keyboard",
+    "check_code_get": "9198",
+    "check_code_put": "1289",
+    "user_courier": [
+      "user6"
+    ],
+    "user_sender": [
+      "user8"
+    ],
+    "address_sender": 12,
+    "user_receiver": [
+      "user5"
+    ],
+    "address_receiver": 7,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.690Z",
+    "status": 3
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 6,
+  "fields": {
+    "contents": "Cotton Towels",
+    "check_code_get": "6881",
+    "check_code_put": "2784",
+    "user_courier": [
+      "user3"
+    ],
+    "user_sender": [
+      "user6"
+    ],
+    "address_sender": 8,
+    "user_receiver": [
+      "user8"
+    ],
+    "address_receiver": 12,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.699Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 7,
+  "fields": {
+    "contents": "Sleek Shoes",
+    "check_code_get": "7744",
+    "check_code_put": "0599",
+    "user_courier": [
+      "user3"
+    ],
+    "user_sender": [
+      "user8"
+    ],
+    "address_sender": 12,
+    "user_receiver": [
+      "user7"
+    ],
+    "address_receiver": 9,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.704Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 8,
+  "fields": {
+    "contents": "Handmade Metal Tuna",
+    "check_code_get": "8645",
+    "check_code_put": "4187",
+    "user_courier": [
+      "user3"
+    ],
+    "user_sender": [
+      "user1"
+    ],
+    "address_sender": 1,
+    "user_receiver": [
+      "user9"
+    ],
+    "address_receiver": 13,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.709Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 9,
+  "fields": {
+    "contents": "Practical Computer",
+    "check_code_get": "1324",
+    "check_code_put": "8528",
+    "user_courier": [
+      "user1"
+    ],
+    "user_sender": [
+      "user3"
+    ],
+    "address_sender": 4,
+    "user_receiver": [
+      "user5"
+    ],
+    "address_receiver": 7,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.714Z",
+    "status": 2
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 10,
+  "fields": {
+    "contents": "Gloves",
+    "check_code_get": "8214",
+    "check_code_put": "1561",
+    "user_courier": [
+      "user7"
+    ],
+    "user_sender": [
+      "user9"
+    ],
+    "address_sender": 13,
+    "user_receiver": [
+      "user4"
+    ],
+    "address_receiver": 6,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.720Z",
+    "status": 2
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 11,
+  "fields": {
+    "contents": "Tuna",
+    "check_code_get": "1167",
+    "check_code_put": "8645",
+    "user_courier": [
+      "user7"
+    ],
+    "user_sender": [
+      "user6"
+    ],
+    "address_sender": 8,
+    "user_receiver": [
+      "user1"
+    ],
+    "address_receiver": 1,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.725Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 12,
+  "fields": {
+    "contents": "Towels",
+    "check_code_get": "0121",
+    "check_code_put": "0407",
+    "user_courier": [
+      "user1"
+    ],
+    "user_sender": [
+      "user5"
+    ],
+    "address_sender": 7,
+    "user_receiver": [
+      "user9"
+    ],
+    "address_receiver": 13,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.729Z",
+    "status": 3
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 13,
+  "fields": {
+    "contents": "Handcrafted Concrete Gloves",
+    "check_code_get": "1396",
+    "check_code_put": "7283",
+    "user_courier": [
+      "user6"
+    ],
+    "user_sender": [
+      "user9"
+    ],
+    "address_sender": 13,
+    "user_receiver": [
+      "user4"
+    ],
+    "address_receiver": 6,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.734Z",
+    "status": 2
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 14,
+  "fields": {
+    "contents": "Tasty Chicken",
+    "check_code_get": "3915",
+    "check_code_put": "2415",
+    "user_courier": [
+      "user7"
+    ],
+    "user_sender": [
+      "user6"
+    ],
+    "address_sender": 8,
+    "user_receiver": [
+      "user1"
+    ],
+    "address_receiver": 1,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.739Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 16,
+  "fields": {
+    "contents": "Chair",
+    "check_code_get": "3915",
+    "check_code_put": "3460",
+    "user_courier": [
+      "user1"
+    ],
+    "user_sender": [
+      "user7"
+    ],
+    "address_sender": 9,
+    "user_receiver": [
+      "user2"
+    ],
+    "address_receiver": 2,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.750Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 17,
+  "fields": {
+    "contents": "Fresh Gloves",
+    "check_code_get": "7967",
+    "check_code_put": "0416",
+    "user_courier": null,
+    "user_sender": [
+      "user4"
+    ],
+    "address_sender": 5,
+    "user_receiver": [
+      "user7"
+    ],
+    "address_receiver": 11,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.756Z",
+    "status": 0
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 18,
+  "fields": {
+    "contents": "Fresh Chair",
+    "check_code_get": "1922",
+    "check_code_put": "4109",
+    "user_courier": [
+      "user3"
+    ],
+    "user_sender": [
+      "user5"
+    ],
+    "address_sender": 7,
+    "user_receiver": [
+      "user1"
+    ],
+    "address_receiver": 1,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.761Z",
+    "status": 2
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 19,
+  "fields": {
+    "contents": "Handmade Tuna",
+    "check_code_get": "2952",
+    "check_code_put": "3674",
+    "user_courier": [
+      "user6"
+    ],
+    "user_sender": [
+      "user5"
+    ],
+    "address_sender": 7,
+    "user_receiver": [
+      "user7"
+    ],
+    "address_receiver": 11,
+    "chat_id": null,
+    "datetime_create": "2025-01-16T23:56:00.765Z",
+    "status": 3
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 21,
+  "fields": {
+    "contents": "Bolsa",
+    "check_code_get": "6448",
+    "check_code_put": "4674",
+    "user_courier": [
+      "user4"
+    ],
+    "user_sender": [
+      "user3"
+    ],
+    "address_sender": 4,
+    "user_receiver": [
+      "user2"
+    ],
+    "address_receiver": 2,
+    "chat_id": null,
+    "datetime_create": "2025-01-17T00:35:40.882Z",
+    "status": 1
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 23,
+  "fields": {
+    "contents": "Glass of wine",
+    "check_code_get": "2759",
+    "check_code_put": "2837",
+    "user_courier": null,
+    "user_sender": [
+      "user3"
+    ],
+    "address_sender": 4,
+    "user_receiver": [
+      "user10"
+    ],
+    "address_receiver": 14,
+    "chat_id": null,
+    "datetime_create": "2025-01-21T02:41:44.774Z",
+    "status": 0
+  }
+},
+{
+  "model": "courier.shipment",
+  "pk": 24,
+  "fields": {
+    "contents": "To cancel",
+    "check_code_get": "2784",
+    "check_code_put": "8560",
+    "user_courier": null,
+    "user_sender": [
+      "user3"
+    ],
+    "address_sender": 4,
+    "user_receiver": [
+      "user10"
+    ],
+    "address_receiver": 14,
+    "chat_id": null,
+    "datetime_create": "2025-01-21T02:42:15.889Z",
+    "status": 4
+  }
+}
+]

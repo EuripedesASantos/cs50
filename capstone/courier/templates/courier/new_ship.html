@@ -1,0 +1,30 @@
+<div class="div_profile">
+    <h1 class="h3 mb-3 font-weight-normal">Create New Shipment</h1>
+    <form action="{% url 'new-shipment' %}" method="post" class="form-register" id="new-shipment_form">
+        {% csrf_token %}
+        {% for field in form %}
+            {% if field.errors %}
+                {{ field.errors }}
+            {% endif %}
+            {% if field.name == 'user_receiver_id' %}
+                <div class="form-group">
+                    <label for="id_user_receiver_id">Select user for delivery:</label>
+                    <input type="text" name="search-user" class="form-control" placeholder="Filter options in select user" autofocus id="search-user">
+                    {{ field }}
+                </div>
+            {% else %}
+                {{ field }}
+            {% endif %}
+        {% endfor %}
+
+        <div id="address_sender-select">
+        </div>
+        <div id="address_deliver-select">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="button-submit">Create</button>
+        {% if message %}
+            <hr>
+            <div class="alert alert-danger" role="alert" id="message"><p>{{ message }}</p></div>
+        {% endif %}
+    </form>
+</div>

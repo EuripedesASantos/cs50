@@ -1,0 +1,89 @@
+{% load humanize %}
+
+<div class="listing">
+    <div class="div_img">
+        <img src="{{ item.listing.img_url }}">
+    </div>
+    <div>
+        <h3>{{ item.listing.title }}</h3>
+        {% for watch in watching_list %}
+            {% if item.listing == watch.listing %}
+                <form action="{% url 'watchlist' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="watchlist_id" value="{{ watch.id }}" id="watchlist_id">
+                    <input class="watch" type="submit" value="Remove from Watchlist">
+                </form>
+            {% endif %}
+        {% endfor %}
+        {% update_variable item.listing watching_list as flag%}
+        {% if user.is_authenticated and flag %}
+            <form action="{% url 'watch_add' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="listing_id" value="{{ item.listing.id }}" id="watchlist_id">
+                <input class="watch" type="submit" value="Add to Watchlist">
+            </form>
+        {% endif %}
+        <p><b>Price: ${{ item.listing.start_bid|floatformat:2|intcomma }}</b></p>
+        {% if item.listing.description %}
+        <p><b>{{ item.listing.description }}</b></p>
+        {% endif %}
+        <p>Created: {{ item.listing.create_date }}</p>
+
+        {% if user.username != item.listing.seller.username %}
+            <form action="{% url 'bid' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="id_new_bid">New bid:</label>
+                    <input type="hidden" name="listing_id" value="{{ item.listing.id }}" id="id_listing_id">
+                    {% if bid_list %}
+                        {% for bid in bid_list %}
+                            {% if bid.listing == listing %}
+                                {% if bid.bid_max %}
+                                    <input type="number" name="new_bid" value="{{ bid.bid_max.value|floatformat:2 }}" min="{{ bid.bid_max.value }}" step="any" required id="id_new_bid">
+                                {% else %}
+                                    <input type="number" name="new_bid" value="{{ item.listing.start_bid|floatformat:2 }}" min="{{ item.listing.start_bid }}" step="any" required id="id_new_bid">
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <input type="number" name="new_bid" value="{{ item.listing.start_bid|floatformat:2 }}" min="{{ item.listing.start_bid }}" step="any" required id="id_new_bid">
+                    {% endif %}
+                </div>
+                <input class="btn btn-primary" type="submit" value="Place Bid">
+            </form>
+        {% elif bid_list %}
+            {% for bid in bid_list %}
+                {% if bid.listing == listing %}
+                    {% if bid.num_of_bids %}
+                        <form action="{% url 'sell' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="listing_id" value="{{ item.listing.id }}" id="id_listing_id">
+                            <p>Last bid: ${{ bid.bid_max.value|floatformat:2|intcomma }}</p>
+                            <input class="btn btn-primary" type="submit" value="Sell">
+                        </form>
+                    {% else %}
+                        <p>No bid</p>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="div_detail">
+        <h2 class="class_hide">Details</h2>
+        <ul>
+            {% if user.username == item.listing.seller.username %}
+                <li class="class_hide">Listed by: You</li>
+            {% else %}
+                <li class="class_hide">Listed by: {{ item.listing.seller.username }}</li>
+            {% endif %}
+            {% if item.listing.category %}
+                <li class="class_hide">Category: {{ item.listing.category }}</li>
+            {% else %}
+                <li class="class_hide">Category: No Category Listed</li>
+            {% endif %}
+            <p class="class_hide">Created: {{ item.listing.create_date }}</p>
+        </ul>
+        {% include "comment/comment.html" %}
+    </div>
+</div>
+<hr>

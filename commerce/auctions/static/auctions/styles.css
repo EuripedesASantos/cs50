@@ -1,0 +1,78 @@
+body {
+    padding: 10px;
+}
+
+#new_listing > form > div {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 16% 40% 40%;
+    justify-content: space-between;
+}
+
+.listing_bid {
+    display: grid;
+    padding: 10px;
+    grid-template-columns:  100%;
+}
+
+.bid_button {
+    display: grid;
+    padding: 5px;
+    padding-left: 80px;
+    grid-template-columns:  150px;
+}
+
+.listing {
+    display: grid;
+    padding: 2px;
+    grid-template-columns: 300px 300px 300px;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+}
+
+.listing > div {
+    display: grid;
+    padding: 5px;
+}
+
+.div_img {
+    display: grid;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.div_detail {
+    display: grid;
+}
+
+img {
+    width: 300px;
+    object-fit: scale-down;
+    text-align: center;
+}
+
+.price {
+font-size: 2rem;
+}
+
+.watch {
+    border-radius: 10%;
+    background-color: gray;
+    color: white;
+    font-size: small;
+}
+
+.comment {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    img {
+        width: 100px;
+        object-fit: scale-down;
+    }
+    .class_hide {
+        display: none;
+    }
+}

@@ -1,0 +1,100 @@
+{% if message %}
+    <hr>
+    <div class="alert alert-danger" role="alert" id="message"><p>{{ message }}</p></div>
+{% endif %}
+
+{% for ship in shipments %}
+    <div class="div_shipments" title="Click to view all informations.">
+        <ul class="ul_shipments">
+            {% if title != 'Courier System'  %}
+                <li><b>From user:</b> {{ ship.user_sender.username }}
+                    <ul class="hide">
+                        <li><b>First name:</b> {{ ship.user_sender.first_name }}</li>
+                        <li><b>Last name:</b> {{ ship.user_sender.last_name }}</li>
+                    </ul>
+                </li>
+            {% endif %}
+            <li><b>To user:</b> {{ ship.user_receiver.username }}
+                <ul class="hide">
+                    <li><b>First name:</b> {{ ship.user_receiver.first_name }}</li>
+                    <li><b>Last name:</b> {{ ship.user_receiver.last_name }}</li>
+                </ul>
+            </li>
+            <li><b>Content:</b> {{ ship.contents }}</li>
+            <li class="hide">
+                <hr>
+                <b>Address to get:</b>
+                <ul>
+                    <li><b>Address:</b> {{ ship.address_sender.address }}</li>
+                    <li><b>Complement:</b> {{ ship.address_sender.complement }}</li>
+                    <li><b>City:</b> {{ ship.address_sender.city }}</li>
+                    {% if ship.address_sender.gps %}
+                    <li><b>GPS position:</b> ({{ ship.address_sender.gps.latitude }}, {{ ship.address_sender.gps.longitude }})</li>
+                    {% endif %}
+                </ul>
+            </li>
+            <li class="hide">
+                <hr>
+                <b>Address to deliver:</b>
+                <ul>
+                    <li><b>Address:</b> {{ ship.address_receiver.address }}</li>
+                    <li><b>Complement:</b> {{ ship.address_receiver.complement }}</li>
+                    <li><b>City:</b> {{ ship.address_receiver.city }}</li>
+                    {% if ship.address_receiver.gps %}
+                    <li><b>GPS position:</b> ({{ ship.address_receiver.gps.latitude }}, {{ ship.address_receiver.gps.longitude }})</li>
+                    {% endif %}
+                </ul>
+            </li>
+            {% if title in 'All Shipments Shipments to order Order to receive Order to deliver'  %}
+                    <!--Shipment.CREATED-->
+                    {% if ship.status_id == 0 %}
+                        <form action="{% url 'courier-order' %}" method="post" class="form-courier">
+                            {% csrf_token %}
+                            <button class="btn btn-sm btn-primary" type="submit">Order</button>
+                            <input type="hidden" name="shipment_id" value="{{ ship.id }}">
+                        </form>
+
+                    <!--Shipment.ORDERED-->
+                    {% elif ship.status_id == 1 %}
+                        <form action="{% url 'courier-receive' %}" method="post" class="div_gps">
+                            {% csrf_token %}
+                            <input type="text" name="check_code_get" maxlength="4" required placeholder="Check code" id="id_check_code_get">
+                            &nbsp;
+                            <button class="btn btn-sm btn-warning" type="submit">Received</button>
+                            <input type="hidden" name="shipment_id" value="{{ ship.id }}">
+                        </form>
+                    <!--Shipment.PICK_UP-->
+                    {% elif ship.status_id == 2 %}
+                        <form action="{% url 'courier-deliver' %}" method="post" class="div_gps">
+                            {% csrf_token %}
+                            <input type="text" name="check_code_put" maxlength="4" required placeholder="Check code" id="id_check_code_put">
+                            <button class="btn btn-sm btn-success" type="submit">Delivered</button>
+                            <input type="hidden" name="shipment_id" value="{{ ship.id }}">
+                        </form>
+                    <!--Shipment.DELIVERED-->
+                    {% elif ship.status_id == 3 %}
+                        <li><b>Status:</b> {{ ship.status }} </li>
+                    {% endif %}
+                    <input type="hidden" name="shipment_id" value="{{ ship.id }}">
+                </form>
+            {% else %}
+                <li><b>Status:</b> {{ ship.status }} </li>
+            {% endif %}
+            {% if user.username == ship.user_receiver.username %}
+                <li><b>Check code:</b> {{ ship.check_code_put }} </li>
+            {% endif %}
+            {% if user.username == ship.user_sender.username %}
+                <li><b>Check code:</b> {{ ship.check_code_get }} </li>
+            {% endif %}
+            {% if ship.user_sender.id == user.id and ship.status_id == 0 %}
+                <form action="{% url 'cancel-shipment' %}" method="post" class="form-courier">
+                    {% csrf_token %}
+                    <button class="btn btn-sm btn-danger" type="submit">Cancel</button>
+                    <input type="hidden" name="shipment_id" value="{{ ship.id }}">
+                </form>
+            {% endif %}
+        </ul>
+    </div>
+{% empty %}
+    <h1>No shipments for user {{ user.username }} is provided</h1>
+{% endfor %}

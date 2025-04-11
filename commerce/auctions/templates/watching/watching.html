@@ -1,0 +1,14 @@
+{% load humanize %}
+
+<h2>{{ page_name }}</h2>
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+
+{% if watching_list %}
+    <div>
+        {% for item in watching_list %}
+            {% include 'watching/watch_item.html' %}
+        {% endfor %}
+    </div>
+{% endif %}

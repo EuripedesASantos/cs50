@@ -1,0 +1,14 @@
+{% load humanize %}
+
+<h2>{{ page_name }}</h2>
+{% if message %}
+    <div>{{ message }}</div>
+{% endif %}
+
+{% if active_listings %}
+    <div>
+        {% for listing in active_listings %}
+            {% include "listing/listing.html" %}
+        {% endfor %}
+    </div>
+{% endif %}

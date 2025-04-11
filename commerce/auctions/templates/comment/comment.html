@@ -1,0 +1,20 @@
+<h2 class="class_hide">Comment</h2>
+{% if comments %}
+<ul class="class_hide">
+    {% for comment in comments %}
+        {% if comment.listing == listing %}
+            <li class="class_hide">{{ comment.comment }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <form action="{% url 'comment' %}" method="post">
+        {% csrf_token %}
+        {{ form_comment }}
+        <input type="hidden" name="listing_id" value="{{ listing.id }}" id="id_listing_id">
+        <textarea class="comment class_hide" id="id_comment" rows="2" required="" name="comment"></textarea>
+        <input class="watch class_hide" type="submit" value="Create Comment">
+    </form>
+{% endif %}

@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block nav %}
+    {% include "auctions/nav.html" %}
+{% endblock %}
+
+
+{% block body %}
+    {% if page_name == "Active Listings" %}
+        {% include "auctions/active_listings.html" %}
+    {% endif %}
+
+    {% if page_name == "Make a Bid" %}
+        {% include "bid/bid.html" %}
+    {% endif %}
+
+    {% if page_name == "Watching List" %}
+        {% include "watching/watching.html" %}
+    {% endif %}
+
+    {% if page_name == "Create listing" %}
+        {% include "listing/new.html" %}
+    {% endif %}
+
+    {% if page_name == "Login" %}
+        {% include "auctions/login.html" %}
+    {% endif %}
+
+    {% if page_name == "Register" %}
+        {% include "auctions/register.html" %}
+    {% endif %}
+
+    {% if page_name == "Category List" %}
+        {% include "category/category.html" %}
+    {% endif %}
+
+    {% if page_name == "Buys List" %}
+        {% include "buy/buy.html" %}
+    {% endif %}
+
+    {% if page_name == "Sold List" %}
+        {% include "sold/sold.html" %}
+    {% endif %}
+
+{% endblock %}
